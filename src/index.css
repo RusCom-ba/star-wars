@@ -69,6 +69,7 @@ body,
 .animate-shake {
   animation: shake 0.4s ease-in-out;
 }
+
 @keyframes holo {
   0% {
     transform: scale(0.95) translateY(20px);
@@ -81,4 +82,12 @@ body,
 }
 .animate-holo {
   animation: holo 0.6s ease-out;
+}
+
+@keyframes holo-vibe {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.01); opacity: 0.97; }
+}
+.animate-holo-vibe {
+  animation: holo-vibe 1.5s infinite ease-in-out;
 }
