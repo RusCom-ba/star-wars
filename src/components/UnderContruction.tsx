@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 
+// This component is displayed on all pages except the Home page, as they are still under construction. It follows a Star Wars theme.
 const UnderConstruction = () => {
   const [showText, setShowText] = useState(false);
 
+  // here i've added some sound effect for light saber which is animated when page is rendered
   useEffect(() => {
     const audio = new Audio("/sounds/lightsaber.mp3");
     audio.volume = 0.5;
@@ -15,6 +17,8 @@ const UnderConstruction = () => {
     return () => clearTimeout(timeout);
   }, []);
 
+
+  // it might be a little bit messy, but it's a tailwind :)
   return (
     <div className="relative flex flex-col items-center justify-center h-screen bg-black overflow-hidden text-white font-sans">
       <div className="absolute top-1/2 left-[-200px] w-[200px] h-2 bg-green-400 shadow-[0_0_30px_10px_#00ff99] animate-saber-glow z-20 rounded" />

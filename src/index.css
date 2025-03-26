@@ -91,3 +91,19 @@ body,
 .animate-holo-vibe {
   animation: holo-vibe 1.5s infinite ease-in-out;
 }
+@keyframes warp {
+  0% {
+    transform: translateY(0) scaleY(0.3);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(-200px) scaleY(1.5);
+    opacity: 0;
+  }
+}
+
+.animate-warp {
+  animation-name: warp;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}

@@ -1,3 +1,4 @@
+// Type that represents a single character from the Star Wars API
 export type Character = {
   id: number;
   name: string;
@@ -12,6 +13,7 @@ export type Character = {
   image?: string;
 };
 
+// Redux state shape for characters
 export type CharacterState = {
   byId: Record<number, Character>;
   allIds: number[];

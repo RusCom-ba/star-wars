@@ -6,6 +6,7 @@ import About from "../pages/About";
 import Home from "../pages/Home";
 import Layout from "../layout/Layout";
 
+// Those are the routes for the app, then i pass it to the App.tsx and wrap it in main.tsx with browserRouter
 const PublicRoutes = () => {
   return (
     <Routes>
