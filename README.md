@@ -1,54 +1,67 @@
-# React + TypeScript + Vite
+# 🌌 Star Wars Character Editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a futuristic React + TypeScript application that displays Star Wars characters fetched from the [SWAPI API](https://swapi.dev/), allowing users to edit character details locally with a stunning hologram-styled modal.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Fetch specific characters from the Star Wars API
+- Store characters in Redux with normalization (`byId`, `allIds`)
+- Fallback to localStorage and sync updates
+- Fully editable character modal styled like a hologram
+- Mobile responsive layout with themed Navbar
+- Custom loaders (Hyperspace warp effect)
+- Under Construction pages with lightsaber animations
+- Error handling with recovery for corrupted local data
 
-## Expanding the ESLint configuration
+## 🧱 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⚛️ React (with Vite)
+- 💬 TypeScript
+- 🎨 TailwindCSS (no config file used)
+- 🌌 Redux Toolkit (for state management)
+- 🔗 React Router DOM (for navigation)
+- 📦 Axios (for API calls)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📁 Project Structure
+
+```
+src/
+├── assets/               # Static images (e.g. Vader, Yoda)
+├── components/           # Reusable components (Card, CardList, EditModal, Loader)
+├── layout/               # Layout wrapper including Navbar
+├── pages/                # Page views (Home, About, etc.)
+├── redux/
+│   ├── character/        # character.slices.tsx, character.types.tsx, character.selector.tsx
+│   └── Store.ts          # Redux store setup
+└── main.tsx              # Entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📦 Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+## 🧪 Running the Project
+
+```bash
+npm run dev
+```
+
+Project runs on [http://localhost:3000] by default.
+
+## 💾 Caching Strategy
+
+- Characters are first looked up in `localStorage`.
+- If not found, they are fetched from the API and then saved in `localStorage`.
+- User edits are saved locally and reloaded on next visit.
+- Corrupted data is automatically recovered with fallback messages.
+
+## 🎬 Live Demo
+
+[🔗 Vercel Deployment Link](https://star-wars-lake-nine.vercel.app/)
+
+## 🧙 Author
+
+Created by Rusmir Čomor.  
+_“May the code be with you.”_
